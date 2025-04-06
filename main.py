@@ -12,9 +12,9 @@ servicios.add_singleton(ServicioBase, MiServicio)
 
 # Obtenemos servicios e inyectamos manualmente en el controlador
 controlador1 = Controlador(servicios.get(ServicioBase))
-controlador2 = Controlador(servicios.get(ServicioBase))
+# controlador2 = Controlador(servicios.get(ServicioBase))
 
 controlador1.ejecutar()
-controlador2.ejecutar()
+# controlador2.ejecutar()
 
-print("¿Misma instancia?", controlador1.servicio is controlador2.servicio)
+# print("¿Misma instancia?", controlador1.servicio is controlador2.servicio)
