@@ -1,20 +1,11 @@
-from core.servicio_provider import ServicioProvider
-from interfaces.servicio_base import ServicioBase
-from services.mi_servicio import MiServicio
-from app.controlador import Controlador
+import injector
+# from example import Servicio, ServicioConcreto, Cliente
+from startup.service_collection_extensions import ModuloDeAplicacion
+from services.icliente import ICliente
 
-# Configuramos el contenedor de servicios
-servicios = ServicioProvider()
+# Crear un injector y utilizarlo para obtener una instancia de Cliente
+injector_obj = injector.Injector(ModuloDeAplicacion())
+cliente = injector_obj.get(ICliente)
 
-# Puedes alternar entre Singleton y Transient
-servicios.add_singleton(ServicioBase, MiServicio)
-# servicios.add_transient(ServicioBase, MiServicio)
 
-# Obtenemos servicios e inyectamos manualmente en el controlador
-controlador1 = Controlador(servicios.get(ServicioBase))
-# controlador2 = Controlador(servicios.get(ServicioBase))
-
-controlador1.ejecutar()
-# controlador2.ejecutar()
-
-# print("¿Misma instancia?", controlador1.servicio is controlador2.servicio)
+print(cliente.ejecutar_servicio())
