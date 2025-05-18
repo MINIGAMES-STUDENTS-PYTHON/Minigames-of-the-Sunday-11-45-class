@@ -121,7 +121,7 @@ class Princesa(pygame.sprite.Sprite):
 # Grupos
 jugador = Jugador()
 donkey = Donkey()
-pricesa = Princesa()
+princesa = Princesa()
 
 jugadores = pygame.sprite.Group()
 jugadores.add(jugador)
