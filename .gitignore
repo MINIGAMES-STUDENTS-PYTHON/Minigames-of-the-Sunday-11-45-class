@@ -1,0 +1,60 @@
+# Entornos virtuales
+venv/
+.env/
+env/
+ENV/
+.venv/
+
+# Archivos de configuración de entorno o IDE
+.idea/
+.vscode/
+*.code-workspace
+
+# Archivos Python compilados
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Archivos de log y dumps
+*.log
+*.pid
+*.bak
+*.swp
+*.tmp
+
+# Archivos de cobertura de tests
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# Archivos de testing
+.pytest_cache/
+
+# Distribución y empaquetado
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Archivos generados por herramientas de empaquetado
+pip-wheel-metadata/
+*.manifest
+
+# Jupyter Notebooks checkpoint
+.ipynb_checkpoints
+
+# MacOS
+.DS_Store
+
+# Linux
+*.~ 
+
+# Archivos de dependencia (si usas Poetry o pipenv)
+poetry.lock
+Pipfile.lock
