@@ -36,15 +36,17 @@ class Jugador(pygame.sprite.Sprite):
         self.vel_y += GRAVEDAD 
         self.rect.y += self.vel_y
 
-        colisiones = pygame.sprite.spritecollide(self, plataforma, False)
-        if colisiones:
-            for plataforma in colisiones:
-                if self.vel_y > 0:
-                    self.rect.bottom = plataforma.rect.top 
-                    self.en_suelo = True 
-                    self.vel_y = 0 
-
-        if self.rect.top > ALTO:
+def set_plataformas(self, plataformas):
+    self.plataformas = plataformas
+    colisiones = pygame.sprite.spritecollide(self, self.plataformas, False)
+    if colisiones:
+         for plataforma in colisiones:
+              if self.vel_y > 0:
+                self.rect.bottom = plataforma.rect.top 
+                self.en_suelo = True 
+                self.vel_y = 0 
+            
+if self.rect.top > ALTO:
             self.vidas -= 1 
             self.rect.center = (100, ALTO - 70)
             self.vel_y = 0
@@ -83,6 +85,11 @@ class Donkey(pygame.sprite.Sprite):
         self.image.fill(ROJO)
         self.rect = self.image.get_rect()
         self.rect.center = (100, 90)
+
+        colisiones = pygame.sprite.spritecollide(self, self.plataformas, False)
+
+def set_plataformas(self, plataformas):
+    self.plataformas = plataformas
 
 class Princesa(pygame.sprite.Sprite):
     def __init__(self):

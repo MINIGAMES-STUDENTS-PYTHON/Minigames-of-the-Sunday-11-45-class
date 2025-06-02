@@ -83,7 +83,7 @@ def juego():
             tiempo_barril = 0 
             nuevo = Barril()
             barriles.add(nuevo)
-        
+         
         jugadores.update()
         barriles.update()
 
