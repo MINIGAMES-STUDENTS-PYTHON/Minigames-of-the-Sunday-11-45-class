@@ -7,5 +7,4 @@ from services.icliente import ICliente
 injector_obj = injector.Injector(ModuloDeAplicacion())
 cliente = injector_obj.get(ICliente)
 
-
 print(cliente.ejecutar_servicio())
